@@ -1,2 +1,2 @@
 # QMKC-Inc.
-Card Hub Game
+Card Game Hub
