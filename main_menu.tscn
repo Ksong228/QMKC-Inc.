@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://u1jbs7wfse36"]
+
+[ext_resource type="Texture2D" uid="uid://bj7a2m880eukj" path="res://Media/card menu background.jpg" id="1_wakyp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_telhf"]
+texture = ExtResource("1_wakyp")
+modulate_color = Color(0.628087, 0.597238, 0.597229, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b1qh"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 95.0
+offset_top = 369.0
+offset_right = 161.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -10.197
+anchor_right = 29.0758
+offset_top = -691.0
+offset_bottom = 940.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_telhf")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 769.0
+offset_top = -270.0
+offset_right = 1695.0
+offset_bottom = 402.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "START NEW GAME"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "RESUME"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 565.0
+offset_top = -611.0
+offset_right = 1798.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945098, 0.721569, 0.176471, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 225
+text = "MIZZOUNO"
+horizontal_alignment = 1
