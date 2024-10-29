@@ -1,10 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://u1jbs7wfse36"]
+[gd_scene load_steps=7 format=3 uid="uid://u1jbs7wfse36"]
 
-[ext_resource type="Texture2D" uid="uid://bj7a2m880eukj" path="res://Media/card menu background.jpg" id="1_wakyp"]
+[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://Media/animal-1296970_1920.png" id="1_adbk1"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_t7m8d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_telhf"]
-texture = ExtResource("1_wakyp")
+texture = ExtResource("1_adbk1")
 modulate_color = Color(0.628087, 0.597238, 0.597229, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ygai"]
+bg_color = Color(0.627157, 0.469996, 0.064229, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvi4i"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b1qh"]
 bg_color = Color(0.945098, 0.721569, 0.176471, 1)
@@ -29,6 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_t7m8d")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -51,21 +69,51 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 769.0
 offset_top = -270.0
-offset_right = 1695.0
-offset_bottom = 402.0
+offset_right = 1663.0
+offset_bottom = 760.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Single Player" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "SINGLE PLAYER"
+
+[node name="Create Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
-text = "START NEW GAME"
+text = "CREATE GAME"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Join Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "JOIN GAME"
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -73,7 +121,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
 text = "RESUME"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -88,14 +136,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 565.0
+offset_left = 597.0
 offset_top = -611.0
-offset_right = 1798.0
+offset_right = 1830.0
 offset_bottom = -304.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.945098, 0.721569, 0.176471, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 225
-text = "MIZZOUNO"
+text = "MIZUNO"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Create Game" to="." method="_on_create_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Join Game" to="." method="_on_join_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

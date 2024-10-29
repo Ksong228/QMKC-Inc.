@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkrn4vx7m5q8p"
-path="res://.godot/imported/card menu background.jpg-bbf24259c397ffda4bbc8df50df82ad5.ctex"
+uid="uid://b8uapn7m4qc82"
+path="res://.godot/imported/animal-1296970_1920.png-66802e94e52b5bb6212fab9d6d4e7a58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Media/card menu background.jpg"
-dest_files=["res://.godot/imported/card menu background.jpg-bbf24259c397ffda4bbc8df50df82ad5.ctex"]
+source_file="res://Media/animal-1296970_1920.png"
+dest_files=["res://.godot/imported/animal-1296970_1920.png-66802e94e52b5bb6212fab9d6d4e7a58.ctex"]
 
 [params]
 
