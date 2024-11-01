@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://u1jbs7wfse36"]
+[gd_scene load_steps=9 format=3 uid="uid://ce8u3uik2qecl"]
 
-[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://Media/animal-1296970_1920.png" id="1_adbk1"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_t7m8d"]
+[ext_resource type="Texture2D" uid="uid://bkrn4vx7m5q8p" path="res://Media/card menu background.jpg" id="1_1pgqc"]
+[ext_resource type="Script" path="res://lobby.gd" id="2_mhncp"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_telhf"]
-texture = ExtResource("1_adbk1")
-modulate_color = Color(0.628087, 0.597238, 0.597229, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41cjv"]
+texture = ExtResource("1_1pgqc")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ygai"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1sof"]
 bg_color = Color(0.627157, 0.469996, 0.064229, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
@@ -15,7 +14,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvi4i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2kou"]
 bg_color = Color(0.945098, 0.721569, 0.176471, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
@@ -23,7 +22,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b1qh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l03cv"]
 bg_color = Color(0.945098, 0.721569, 0.176471, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
@@ -31,72 +30,64 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m41gw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e087a"]
 bg_color = Color(0.627451, 0.470588, 0.0627451, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xllp3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bndcb"]
 bg_color = Color(0.627451, 0.470588, 0.0627451, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf1wk"]
-bg_color = Color(0.627451, 0.470588, 0.0627451, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[node name="MainMenu" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 95.0
-offset_top = 369.0
-offset_right = 161.0
-offset_bottom = 369.0
+anchor_left = 1.332
+anchor_top = 1.337
+anchor_right = 1.332
+anchor_bottom = 1.337
+offset_left = -1534.46
+offset_top = -866.376
+offset_right = -382.464
+offset_bottom = -218.376
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_t7m8d")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -10.197
-anchor_right = 29.0758
-offset_top = -691.0
-offset_right = 480.995
-offset_bottom = 1033.0
+anchor_right = 2.668
+anchor_bottom = 2.66
+offset_left = 6.0
+offset_top = -1.0
+offset_right = -0.536133
+offset_bottom = 0.319946
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_telhf")
+theme_override_styles/panel = SubResource("StyleBoxTexture_41cjv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1062.0
-offset_top = -452.0
-offset_right = 2210.0
-offset_bottom = 840.0
+anchors_preset = -1
+anchor_left = 1.768
+anchor_top = 0.711
+anchor_right = 2.531
+anchor_bottom = 2.1
+offset_left = -41.7361
+offset_top = 0.271973
+offset_right = 0.287842
+offset_bottom = 0.199951
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_constants/separation = 25
 
-[node name="Single Player" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -113,12 +104,12 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
-text = "SINGLE PLAYER"
+theme_override_styles/hover = SubResource("StyleBoxFlat_c1sof")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s2kou")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l03cv")
+text = "CARD GAMES"
 
-[node name="Create Game" type="Button" parent="VBoxContainer"]
+[node name="Score" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -135,11 +126,11 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxFlat_m41gw")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
-text = "HOST GAME"
+theme_override_styles/hover = SubResource("StyleBoxFlat_e087a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l03cv")
+text = "LEADERBOARD"
 
-[node name="Join Game" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -156,51 +147,30 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxFlat_xllp3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
-text = "JOIN GAME"
-
-[node name="Back" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxFlat_mf1wk")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
-text = "BACK"
+theme_override_styles/hover = SubResource("StyleBoxFlat_bndcb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l03cv")
+text = "EXIT"
+script = ExtResource("2_mhncp")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-offset_left = -446.0
-offset_top = -473.0
-offset_right = 912.0
-offset_bottom = -23.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1154.0
+offset_top = 87.0
+offset_right = 1849.0
+offset_bottom = 394.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0.945098, 0.721569, 0.176471, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 330
-text = "MIZUNO"
+theme_override_font_sizes/font_size = 225
+text = "CARD GAME HUB"
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(864, 172)
+position = Vector2(1534, 867)
 zoom = Vector2(0.375, 0.375)
 
-[connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="VBoxContainer/Create Game" to="." method="_on_create_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Join Game" to="." method="_on_join_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Exit" method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="exit_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]
