@@ -1,0 +1,263 @@
+[gd_scene load_steps=9 format=3 uid="uid://5oaipiviojac"]
+
+[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://Media/animal-1296970_1920.png" id="2_dc2bq"]
+
+[sub_resource type="GDScript" id="GDScript_ictfc"]
+script/source = "extends Control
+
+
+
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://main menu.tscn\")
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_telhf"]
+texture = ExtResource("2_dc2bq")
+modulate_color = Color(0.628087, 0.597238, 0.597229, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ygai"]
+bg_color = Color(0.627157, 0.469996, 0.064229, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvi4i"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b1qh"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ango"]
+bg_color = Color(0.627451, 0.470588, 0.0627451, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhgf4"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 95.0
+offset_top = 369.0
+offset_right = 161.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_ictfc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -10.197
+anchor_right = 29.0758
+offset_top = -691.0
+offset_right = 480.995
+offset_bottom = 1033.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_telhf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -572.0
+offset_top = -347.0
+offset_right = 576.0
+offset_bottom = 945.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Mizuno" type="Button" parent="."]
+offset_left = 754.0
+offset_top = -347.0
+offset_right = 1476.0
+offset_bottom = 275.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "MIZUNO"
+
+[node name="Blackjack" type="Button" parent="."]
+offset_left = 1549.0
+offset_top = -340.0
+offset_right = 2271.0
+offset_bottom = 282.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "BLACKJACK"
+
+[node name="Game 3" type="Button" parent="."]
+offset_left = 1552.0
+offset_top = 347.0
+offset_right = 2274.0
+offset_bottom = 969.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+
+[node name="Game 4" type="Button" parent="."]
+layout_mode = 2
+offset_left = 755.0
+offset_top = 343.0
+offset_right = 1477.0
+offset_bottom = 965.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+offset_left = -549.0
+offset_top = 649.0
+offset_right = 609.0
+offset_bottom = 945.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ango")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mhgf4")
+text = "BACK"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 353.0
+offset_top = -686.0
+offset_right = 2455.0
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945098, 0.721569, 0.176471, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 235
+text = "GAME LOBBY"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(864, 172)
+zoom = Vector2(0.375, 0.375)
+
+[connection signal="pressed" from="Mizuno" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Blackjack" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Blackjack" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Blackjack" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Game 3" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Game 3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Game 3" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
