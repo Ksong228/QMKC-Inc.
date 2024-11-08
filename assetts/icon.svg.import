@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkrn4vx7m5q8p"
-path="res://.godot/imported/card menu background.jpg-bbf24259c397ffda4bbc8df50df82ad5.ctex"
+uid="uid://bja8vhe0bqc11"
+path="res://.godot/imported/icon.svg-658138f9878e47a093051ef1c648c005.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Media/card menu background.jpg"
-dest_files=["res://.godot/imported/card menu background.jpg-bbf24259c397ffda4bbc8df50df82ad5.ctex"]
+source_file="res://assetts/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-658138f9878e47a093051ef1c648c005.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

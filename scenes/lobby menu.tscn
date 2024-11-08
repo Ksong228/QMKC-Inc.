@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://5oaipiviojac"]
 
-[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://Media/animal-1296970_1920.png" id="2_dc2bq"]
+[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://assetts/animal-1296970_1920.png" id="2_dc2bq"]
 
 [sub_resource type="GDScript" id="GDScript_ictfc"]
 script/source = "extends Control
@@ -85,22 +85,33 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_telhf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Lobby code" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchor_left = 0.447
+anchor_right = 0.447
+offset_left = -570.502
+offset_top = -630.0
+offset_right = 570.498
+offset_bottom = -416.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Player names" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -572.0
+anchors_preset = -1
+anchor_left = 0.477
+anchor_right = 0.477
+offset_left = -570.482
 offset_top = -347.0
-offset_right = 576.0
-offset_bottom = 945.0
+offset_right = 570.518
+offset_bottom = 612.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
 
 [node name="Mizuno" type="Button" parent="."]
+layout_mode = 0
 offset_left = 754.0
 offset_top = -347.0
 offset_right = 1476.0
@@ -126,6 +137,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
 text = "MIZUNO"
 
 [node name="Blackjack" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1549.0
 offset_top = -340.0
 offset_right = 2271.0
@@ -151,6 +163,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
 text = "BLACKJACK"
 
 [node name="Game 3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1552.0
 offset_top = 347.0
 offset_right = 2274.0
@@ -247,17 +260,17 @@ horizontal_alignment = 1
 position = Vector2(864, 172)
 zoom = Vector2(0.375, 0.375)
 
+[connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Mizuno" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Mizuno" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Blackjack" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Blackjack" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Blackjack" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Blackjack" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Game 3" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Game 3" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Game 3" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Game 3" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Game 4" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Game 4" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

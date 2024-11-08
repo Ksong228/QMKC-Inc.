@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://ijw5xeul5cse"]
 
-[ext_resource type="Texture2D" uid="uid://bkrn4vx7m5q8p" path="res://Media/card menu background.jpg" id="1_txxar"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_vq5u2"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_avew1"]
+[ext_resource type="Texture2D" uid="uid://bkrn4vx7m5q8p" path="res://assetts/card menu background.jpg" id="2_pgi3b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41cjv"]
-texture = ExtResource("1_txxar")
+texture = ExtResource("2_pgi3b")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pebls"]
 bg_color = Color(0.627157, 0.469996, 0.064229, 1)
@@ -65,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_vq5u2")
+script = ExtResource("1_avew1")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
