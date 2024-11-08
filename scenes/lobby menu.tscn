@@ -1,13 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://5oaipiviojac"]
 
+[ext_resource type="Script" path="res://lobby menu.gd" id="1_nv4mh"]
 [ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://assetts/animal-1296970_1920.png" id="2_dc2bq"]
-
-[sub_resource type="GDScript" id="GDScript_ictfc"]
-script/source = "extends Control
-
-func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/main menu.tscn\")
-"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_telhf"]
 texture = ExtResource("2_dc2bq")
@@ -67,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = SubResource("GDScript_ictfc")
+script = ExtResource("1_nv4mh")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
