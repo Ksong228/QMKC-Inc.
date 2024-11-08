@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://5oaipiviojac"]
 
-[ext_resource type="Script" path="res://lobby menu.gd" id="1_nv4mh"]
-[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://assetts/animal-1296970_1920.png" id="2_dc2bq"]
+[ext_resource type="Script" path="res://scripts/lobby menu.gd" id="1_nv4mh"]
+[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://assets/animal-1296970_1920.png" id="2_dc2bq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_telhf"]
 texture = ExtResource("2_dc2bq")
@@ -126,7 +126,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
 text = "MIZUNO"
 
-[node name="Blackjack" type="Button" parent="."]
+[node name="Solitaire" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1549.0
 offset_top = -340.0
@@ -150,7 +150,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
-text = "BLACKJACK"
+text = "Solitaire"
 
 [node name="Game 3" type="Button" parent="."]
 layout_mode = 0
@@ -250,17 +250,18 @@ horizontal_alignment = 1
 position = Vector2(864, 172)
 zoom = Vector2(0.375, 0.375)
 
-[connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Mizuno" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Mizuno" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Blackjack" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Blackjack" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Blackjack" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Game 3" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Game 3" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Solitaire" to="." method="_on_solitaire_pressed"]
+[connection signal="pressed" from="Solitaire" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Solitaire" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Solitaire" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Game 3" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Game 4" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Game 3" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Game 3" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Game 4" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_exit_pressed"]
