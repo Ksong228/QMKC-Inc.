@@ -1,13 +1,14 @@
 extends Node3D
 
 var card_database = FaceCards.new()
+'Heart = Green, Diamond = Red, Spade = Blue, Club = Yellow'
 var suits = [
-	FaceCards.Suit.CLUB,
-	FaceCards.Suit.SPADE,
-	FaceCards.Suit.DIAMOND,
-	FaceCards.Suit.HEART,
+	FaceCards.Suit.YELLOW,
+	FaceCards.Suit.BLUE,
+	FaceCards.Suit.RED,
+	FaceCards.Suit.GREEN,
 ]
-var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+var ranks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 var suit_index = 0
 var rank_index = 0

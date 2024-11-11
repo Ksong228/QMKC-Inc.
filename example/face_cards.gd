@@ -2,19 +2,19 @@ class_name FaceCards
 extends Resource
 
 enum Rank {
-	TWO = 2,
-	THREE = 3,
-	FOUR = 4,
-	FIVE = 5,
-	SIX = 6,
-	SEVEN = 7,
-	EIGHT = 8,
-	NINE = 9,
-	ZERO = 0,
+	TWO = 02,
+	THREE = 03,
+	FOUR = 04,
+	FIVE = 05,
+	SIX = 06,
+	SEVEN = 07,
+	EIGHT = 08,
+	NINE = 09,
+	ZERO = 00,
 	REVERSE = 12,
 	SKIP = 11,
 	PLUSTWO = 10,
-	ONE = 1
+	ONE = 01
 }
 
 enum Suit {
