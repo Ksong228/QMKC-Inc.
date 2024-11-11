@@ -8,10 +8,10 @@ func can_insert_card(card: FaceCard3D, _from_collection) -> bool:
 	var last_card = cards[cards.size() - 1]
 	var is_prior_rank = card.rank == last_card.rank - 1
 	var is_opposite_color = false;
-
-	if (card.suit == FaceCards.Suit.HEART or card.suit == FaceCards.Suit.DIAMOND) and (last_card.suit == FaceCards.Suit.CLUB or last_card.suit == FaceCards.Suit.SPADE):
+	'Heart = Green, Diamond = Red, Spade = Blue, Club = Yellow'
+	if (card.suit == FaceCards.Suit.GREEN or card.suit == FaceCards.Suit.RED) and (last_card.suit == FaceCards.Suit.YELLOW or last_card.suit == FaceCards.Suit.BLUE):
 		is_opposite_color = true
-	elif (last_card.suit == FaceCards.Suit.HEART or last_card.suit == FaceCards.Suit.DIAMOND) and (card.suit == FaceCards.Suit.CLUB or card.suit == FaceCards.Suit.SPADE):
+	elif (last_card.suit == FaceCards.Suit.GREEN or last_card.suit == FaceCards.Suit.RED) and (card.suit == FaceCards.Suit.YELLOW or card.suit == FaceCards.Suit.BLUE):
 		is_opposite_color = true
 
 	return last_card.face_down or (is_opposite_color and is_prior_rank)

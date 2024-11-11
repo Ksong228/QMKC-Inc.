@@ -16,7 +16,7 @@ extends Card3D
 			back_material_path = data["back_material_path"]
 
 @export var rank: FaceCards.Rank = FaceCards.Rank.TWO
-@export var suit: FaceCards.Suit = FaceCards.Suit.DIAMOND
+@export var suit: FaceCards.Suit = FaceCards.Suit.GREEN
 @export var front_material_path: String:
 	set(path):
 		if path:
