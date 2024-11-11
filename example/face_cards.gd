@@ -10,18 +10,18 @@ enum Rank {
 	SEVEN = 7,
 	EIGHT = 8,
 	NINE = 9,
-	TEN = 10,
-	JACK = 11,
-	QUEEN = 12,
-	KING = 13,
-	ACE = 14
+	ZERO = 0,
+	REVERSE = 12,
+	SKIP = 11,
+	PLUSTWO = 10,
+	ONE = 1
 }
 
 enum Suit {
-	HEART,
-	DIAMOND,
-	CLUB,
-	SPADE
+	RED,
+	BLUE,
+	YELLOW,
+	GREEN
 }
 
 
