@@ -8,6 +8,7 @@ Usage:
 	- extend the card_3d scene and to add your custom card details
 	- extent Card3D class and apply it to your inherited scene
 """
+
 class_name Card3D
 extends Node3D
 

@@ -6,10 +6,10 @@ func can_insert_card(card: FaceCard3D, from_collection: CardCollection3D) -> boo
 		return false
 
 	if cards.size() == 0:
-		return card.rank == FaceCards.Rank.ZERO
+		return card.rank == FaceCards.Rank.ACE
 
 	var last_card = cards[cards.size() - 1]
-	var is_next_rank = (card.rank == last_card.rank + 1) or (last_card.rank == FaceCards.Rank.ZERO and card.rank == FaceCards.Rank.TWO)
+	var is_next_rank = (card.rank == last_card.rank + 1) or (last_card.rank == FaceCards.Rank.ACE and card.rank == FaceCards.Rank.TWO)
 	var is_same_suit = last_card.suit == card.suit
 	
 	return is_next_rank and is_same_suit

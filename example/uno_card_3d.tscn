@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://csnr8t6g7yi4f"]
+
+[ext_resource type="PackedScene" uid="uid://dxpc2iac0hjpw" path="res://addons/card_3d/scenes/card_3d.tscn" id="1_yrxdx"]
+[ext_resource type="Script" path="res://example/uno_card_3d.gd" id="2_knhm0"]
+
+[node name="FaceCard3D" instance=ExtResource("1_yrxdx")]
+transform = Transform3D(0.999974, -0.00724292, 0, 0.00724292, 0.999974, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("2_knhm0")
+data = {}
+rank = 0
+suit = 0
+front_material_path = ""
+back_material_path = ""

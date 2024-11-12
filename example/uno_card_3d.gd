@@ -1,13 +1,13 @@
-class_name FaceCard3D
+class_name UnoCard3D
 extends Card3D
 
 @export var data: Dictionary:
 	set(data):
 		if data.has("rank"):
-			rank = FaceCards.Rank[data["rank"]]
+			rank = UnoCards.Rank[data["rank"]]
 		
 		if data.has("suit"):
-			suit = FaceCards.Suit[data["suit"]]
+			suit = UnoCards.Suit[data["suit"]]
 		
 		if data.has("front_material_path"):
 			front_material_path = data["front_material_path"]
@@ -15,8 +15,8 @@ extends Card3D
 		if data.has("back_material_path"):
 			back_material_path = data["back_material_path"]
 
-@export var rank: FaceCards.Rank = FaceCards.Rank.TWO
-@export var suit: FaceCards.Suit = FaceCards.Suit.DIAMOND
+@export var rank: UnoCards.Rank = UnoCards.Rank.ZERO
+@export var suit: UnoCards.Suit = UnoCards.Suit.RED
 @export var front_material_path: String:
 	set(path):
 		if path:

@@ -1,7 +1,9 @@
-class_name FaceCards
+class_name UnoCards
 extends Resource
 
 enum Rank {
+	ZERO = 0,
+	ONE = 1,
 	TWO = 2,
 	THREE = 3,
 	FOUR = 4,
@@ -10,18 +12,16 @@ enum Rank {
 	SEVEN = 7,
 	EIGHT = 8,
 	NINE = 9,
-	TEN = 10,
-	JACK = 11,
-	QUEEN = 12,
-	KING = 13,
-	ACE = 14
+	SKIP = 10,
+	REVERSE = 11,
+	PLUSTWO = 12
 }
 
 enum Suit {
-	HEART,
-	DIAMOND,
-	CLUB,
-	SPADE
+	RED,
+	BLUE,
+	GREEN,
+	YELLOW
 }
 
 
