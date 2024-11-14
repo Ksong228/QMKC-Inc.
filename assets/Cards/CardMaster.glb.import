@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dskvty5o1cpmb"
-path="res://.godot/imported/CardMaster.glb-67701f0f3c120a88de1545da83d250cc.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/Cards/CardMaster.glb"
-dest_files=["res://.godot/imported/CardMaster.glb-67701f0f3c120a88de1545da83d250cc.scn"]
 
 [params]
 

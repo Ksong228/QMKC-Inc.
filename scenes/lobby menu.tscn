@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://5oaipiviojac"]
+[gd_scene load_steps=10 format=3 uid="uid://5oaipiviojac"]
 
 [ext_resource type="Script" path="res://scripts/lobby menu.gd" id="1_nv4mh"]
-[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://assetts/animal-1296970_1920.png" id="2_dc2bq"]
+[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://assets/animal-1296970_1920.png" id="2_dc2bq"]
+[ext_resource type="Script" path="res://scripts/network.gd" id="3_a370j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_telhf"]
 texture = ExtResource("2_dc2bq")
@@ -48,41 +49,40 @@ shadow_size = 5
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
-anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 95.0
-offset_top = 369.0
-offset_right = 161.0
-offset_bottom = 369.0
+offset_left = 100.0
+offset_top = 368.0
+offset_right = 166.0
+offset_bottom = 368.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 script = ExtResource("1_nv4mh")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel (backg)" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -10.197
-anchor_right = 29.0758
+anchor_right = 36.364
 offset_top = -691.0
-offset_right = 480.995
+offset_right = -0.0263672
 offset_bottom = 1033.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_telhf")
+metadata/_edit_use_anchors_ = true
 
 [node name="Lobby code" type="VBoxContainer" parent="."]
 layout_mode = 2
 anchor_left = 0.447
 anchor_right = 0.447
-offset_left = -570.502
-offset_top = -630.0
-offset_right = 570.498
-offset_bottom = -416.0
+offset_left = -585.502
+offset_top = -603.0
+offset_right = 555.498
+offset_bottom = -389.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
@@ -92,20 +92,21 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.477
 anchor_right = 0.477
-offset_left = -570.482
-offset_top = -347.0
-offset_right = 570.518
-offset_bottom = 612.0
+offset_left = -581.482
+offset_top = -354.0
+offset_right = 559.518
+offset_bottom = 605.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
 
 [node name="Mizuno" type="Button" parent="."]
-layout_mode = 0
-offset_left = 785.0
-offset_top = -365.0
-offset_right = 1507.0
-offset_bottom = 257.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 777.0
+offset_top = -329.0
+offset_right = 1499.0
+offset_bottom = 293.0
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -126,13 +127,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
 text = "MIZUNO"
 script = ExtResource("1_nv4mh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Solitare" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1569.0
-offset_top = -365.0
-offset_right = 2291.0
-offset_bottom = 257.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1565.0
+offset_top = -325.0
+offset_right = 2287.0
+offset_bottom = 297.0
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -155,11 +158,11 @@ text = "SOLITARE"
 script = ExtResource("1_nv4mh")
 
 [node name="Game 3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1569.0
-offset_top = 331.0
-offset_right = 2291.0
-offset_bottom = 953.0
+layout_mode = 2
+offset_left = 789.0
+offset_top = 347.0
+offset_right = 1511.0
+offset_bottom = 969.0
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -180,11 +183,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
 
 [node name="Game 4" type="Button" parent="."]
-layout_mode = 2
-offset_left = 785.0
-offset_top = 331.0
-offset_right = 1507.0
-offset_bottom = 953.0
+layout_mode = 0
+offset_left = 1565.0
+offset_top = 347.0
+offset_right = 2287.0
+offset_bottom = 969.0
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -236,10 +239,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 353.0
-offset_top = -686.0
-offset_right = 2455.0
-offset_bottom = -236.0
+offset_left = 713.0
+offset_top = -670.0
+offset_right = 2335.0
+offset_bottom = -349.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.945098, 0.721569, 0.176471, 1)
@@ -248,23 +251,86 @@ theme_override_font_sizes/font_size = 235
 text = "GAME LOBBY"
 horizontal_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(864, 172)
+[node name="Network" type="Node" parent="."]
+script = ExtResource("3_a370j")
+
+[node name="Local network" type="Panel" parent="Network"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -206.0
+offset_right = 699.0
+offset_bottom = 935.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Network"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -126.0
+offset_right = 627.0
+offset_bottom = 855.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="IP" type="LineEdit" parent="Network/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+placeholder_text = "IP ADDRESS..."
+alignment = 1
+
+[node name="Port" type="LineEdit" parent="Network/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+placeholder_text = "PORT..."
+alignment = 1
+
+[node name="User" type="LineEdit" parent="Network/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+placeholder_text = "GAME NAME..."
+alignment = 1
+
+[node name="Host" type="Button" parent="Network/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "HOST"
+
+[node name="Join" type="Button" parent="Network/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "JOIN"
+
+[node name="Camera2D" type="Camera2D" parent="Network/VBoxContainer"]
+position = Vector2(1348, 615)
 zoom = Vector2(0.375, 0.375)
 
-[connection signal="pressed" from="Mizuno" to="." method="_on_mizuno_pressed"]
-[connection signal="pressed" from="Mizuno" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Mizuno" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Solitare" to="." method="_on_solitare_pressed"]
-[connection signal="pressed" from="Solitare" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_mizuno_pressed"]
 [connection signal="pressed" from="Solitare" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Solitare" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Solitare" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Game 3" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Solitare" to="." method="_on_solitare_pressed"]
 [connection signal="pressed" from="Game 3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Game 3" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Game 3" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Game 4" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Game 4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="text_changed" from="Network/VBoxContainer/User" to="Network" method="_on_user_text_changed"]
+[connection signal="pressed" from="Network/VBoxContainer/Host" to="Network" method="start_host"]
+[connection signal="pressed" from="Network/VBoxContainer/Join" to="Network" method="join_game"]
