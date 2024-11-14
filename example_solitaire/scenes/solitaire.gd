@@ -41,8 +41,7 @@ func _ready():
 			if num != j - 1:
 				card.face_down = true
 			column.append_card(card)
-
-	j += 1
+		j += 1
 
 	for card in card_deck:
 		deck_collection.append_card(card)
@@ -105,3 +104,14 @@ func _on_drag_controller_card_moved(_card: FaceCard3D, from_collection: CardColl
 		var card = from_collection.remove_card(from_index)
 		to_collection.append_card(card)
 		card.global_position = new_position
+
+#this function checks for a game win:
+func check_for_win():
+	var win = true
+	for i in range(1,5):
+		var discard_pile = $DragController.get_node("SuitDiscard"+str(i))
+		if discard_pile.cards.size()<13:
+			win = false
+			break
+	if win:
+		get_tree().change_scene_to_file("")
