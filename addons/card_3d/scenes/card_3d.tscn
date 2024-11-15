@@ -1,14 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxpc2iac0hjpw"]
 
 [ext_resource type="Script" path="res://addons/card_3d/scripts/card_3d.gd" id="1_ll0aq"]
-[ext_resource type="Texture2D" uid="uid://cvvrrkbx81k3h" path="res://example/assets/Card_Back.png" id="2_upnc6"]
 [ext_resource type="Material" uid="uid://h7vdysdtgmgu" path="res://example/materials/club-14.tres" id="3_7keew"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a5dw2"]
 size = Vector2(2.5, 3.5)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kgd46"]
+load_path = "res://.godot/imported/Card_Back.png-5a39b3dfa3e8e8367da88e9bb87e7eda.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k64yj"]
-albedo_texture = ExtResource("2_upnc6")
+albedo_texture = SubResource("CompressedTexture2D_kgd46")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o3bng"]
 size = Vector2(2.5, 3.5)
