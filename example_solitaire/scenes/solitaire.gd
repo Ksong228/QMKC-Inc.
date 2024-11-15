@@ -114,4 +114,4 @@ func check_for_win():
 			win = false
 			break
 	if win:
-		get_tree().change_scene_to_file("")
+		get_tree().change_scene_to_file("res://scenes/lobby menu.tscn")
