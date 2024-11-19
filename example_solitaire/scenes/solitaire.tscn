@@ -218,6 +218,44 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 7, 
 [node name="PileMarker4" parent="." instance=ExtResource("9_xrvyx")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9, 7, -0.5)
 
+[node name="MenuPopup" type="PopupPanel" parent="."]
+size = Vector2i(112, 109)
+visible = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPopup"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -50.5
+offset_right = 52.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="MenuPopup/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="MenuPopup/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="ExitToLobbyButton" type="Button" parent="MenuPopup/VBoxContainer"]
+layout_mode = 2
+text = "Exit to lobby"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuButton" type="Button" parent="CanvasLayer"]
+offset_left = 1094.0
+offset_top = 4.0
+offset_right = 1147.0
+offset_bottom = 42.0
+text = "Menu"
+
 [connection signal="card_moved" from="DragController" to="." method="_on_drag_controller_card_moved"]
 [connection signal="card_selected" from="Deck" to="." method="_on_deck_card_selected"]
 [connection signal="on_click" from="EmptyDeck" to="." method="_on_empty_deck_on_click"]
