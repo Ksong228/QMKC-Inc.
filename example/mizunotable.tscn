@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://usdfp6fqxnev"]
+[gd_scene load_steps=14 format=3 uid="uid://usdfp6fqxnev"]
 
 [ext_resource type="Script" path="res://example/mizunotable.gd" id="1_dl1vx"]
 [ext_resource type="Script" path="res://addons/card_3d/scripts/drag_controller.gd" id="2_vd44s"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/card_3d/scripts/card_layouts/fan_card_layout.gd" id="5_gc5vc"]
 [ext_resource type="PackedScene" uid="uid://dwcaww0bky4lv" path="res://assets/MIZUNO.glb" id="6_jj2ui"]
 [ext_resource type="PackedScene" uid="uid://bjx4ugu14qx3w" path="res://example/face_card_3d.tscn" id="7_50euc"]
+[ext_resource type="Material" uid="uid://drikh8gb0pvmj" path="res://example/materials/card-back.tres" id="8_cxk50"]
 
 [sub_resource type="Resource" id="Resource_yq80r"]
 script = ExtResource("4_m0e7m")
@@ -79,9 +80,11 @@ transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0.1
 transform = Transform3D(1, 8.74228e-08, -8.74228e-08, 8.74228e-08, -1, -7.64274e-15, -8.74228e-08, 0, -1, 1.66348, 2.56126, -0.686903)
 rank = 14
 suit = 3
+back_material_path = "res://example/card-back.tres"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Deck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.111376)
 mesh = SubResource("BoxMesh_g1lkx")
+surface_material_override/0 = ExtResource("8_cxk50")
 
 [connection signal="card_3d_mouse_up" from="Deck" to="Table" method="_on_face_card_3d_card_3d_mouse_up"]

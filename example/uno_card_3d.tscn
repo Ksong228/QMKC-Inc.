@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://csnr8t6g7yi4f"]
+[gd_scene load_steps=5 format=3 uid="uid://csnr8t6g7yi4f"]
 
 [ext_resource type="PackedScene" uid="uid://dxpc2iac0hjpw" path="res://addons/card_3d/scenes/card_3d.tscn" id="1_yrxdx"]
 [ext_resource type="Script" path="res://example/uno_card_3d.gd" id="2_knhm0"]
+[ext_resource type="Texture2D" uid="uid://17jkd61ca2nf" path="res://example/assets/Card_Back.png" id="3_gse23"]
 
-[node name="FaceCard3D" instance=ExtResource("1_yrxdx")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icwpr"]
+albedo_texture = ExtResource("3_gse23")
+
+[node name="UnoCard3D" instance=ExtResource("1_yrxdx")]
 transform = Transform3D(0.999974, -0.00724292, 0, 0.00724292, 0.999974, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("2_knhm0")
 data = {}
-rank = 0
-suit = 0
+rank = 11
+suit = 1
 front_material_path = ""
-back_material_path = ""
+back_material_path = "res://example/materials/card-back.tres"
+
+[node name="CardBackMesh" parent="CardMesh" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_icwpr")
