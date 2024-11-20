@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://usdfp6fqxnev"]
+
+[ext_resource type="Script" path="res://example/mizunotable.gd" id="1_dl1vx"]
+[ext_resource type="Script" path="res://addons/card_3d/scripts/drag_controller.gd" id="2_vd44s"]
+[ext_resource type="PackedScene" uid="uid://d1uvcisduvvj" path="res://addons/card_3d/scenes/card_collection_3d.tscn" id="3_38q4v"]
+[ext_resource type="Script" path="res://addons/card_3d/scripts/card_layouts/line_card_layout.gd" id="4_m0e7m"]
+[ext_resource type="Script" path="res://addons/card_3d/scripts/card_layouts/fan_card_layout.gd" id="5_gc5vc"]
+[ext_resource type="PackedScene" uid="uid://dwcaww0bky4lv" path="res://assets/MIZUNO.glb" id="6_jj2ui"]
+[ext_resource type="PackedScene" uid="uid://bjx4ugu14qx3w" path="res://example/face_card_3d.tscn" id="7_50euc"]
+
+[sub_resource type="Resource" id="Resource_yq80r"]
+script = ExtResource("4_m0e7m")
+
+[sub_resource type="Resource" id="Resource_w17iw"]
+script = ExtResource("5_gc5vc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gv0to"]
+size = Vector2(40, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glsqp"]
+albedo_color = Color(0.207843, 0.396078, 0.301961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g1lkx"]
+size = Vector3(2.5, 3.5, 0.2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.49813)
+shadow_enabled = true
+shadow_opacity = 0.65
+shadow_blur = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.3544)
+current = true
+fov = 84.375
+
+[node name="Table" type="Node3D" parent="."]
+script = ExtResource("1_dl1vx")
+
+[node name="DragController" type="Node3D" parent="Table"]
+script = ExtResource("2_vd44s")
+
+[node name="TableCards" parent="Table/DragController" instance=ExtResource("3_38q4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182991, -1.3779, 0)
+card_layout_strategy = SubResource("Resource_yq80r")
+
+[node name="Hand" parent="Table/DragController" instance=ExtResource("3_38q4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21758, 2.30532, 0.5)
+card_layout_strategy = SubResource("Resource_w17iw")
+
+[node name="Player1" parent="Table/DragController" instance=ExtResource("3_38q4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0754433, -10.3692, 0.5)
+card_layout_strategy = SubResource("Resource_w17iw")
+
+[node name="Player2" parent="Table/DragController" instance=ExtResource("3_38q4v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10.1461, 0.556923, 0.5)
+card_layout_strategy = SubResource("Resource_w17iw")
+
+[node name="Player3" parent="Table/DragController" instance=ExtResource("3_38q4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0613, 12.2174, 0.5)
+card_layout_strategy = SubResource("Resource_w17iw")
+
+[node name="Player4" parent="Table/DragController" instance=ExtResource("3_38q4v")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 11.2482, 1.07772, 0.5)
+card_layout_strategy = SubResource("Resource_w17iw")
+
+[node name="TableSurface" type="MeshInstance3D" parent="Table"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, -1.29586)
+mesh = SubResource("PlaneMesh_gv0to")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_glsqp")
+
+[node name="MIZUNO" parent="Table" instance=ExtResource("6_jj2ui")]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0.154611, 0.296223, -18.4303)
+
+[node name="Deck" parent="." instance=ExtResource("7_50euc")]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, 8.74228e-08, -1, -7.64274e-15, -8.74228e-08, 0, -1, 1.66348, 2.56126, -0.686903)
+rank = 14
+suit = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Deck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.111376)
+mesh = SubResource("BoxMesh_g1lkx")
+
+[connection signal="card_3d_mouse_up" from="Deck" to="Table" method="_on_face_card_3d_card_3d_mouse_up"]
