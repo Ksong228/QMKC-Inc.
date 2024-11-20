@@ -3,7 +3,8 @@ extends CardCollection3D
 
 func can_insert_card(card: FaceCard3D, _from_collection) -> bool:
 	if cards.size() == 0:
-		return true
+		#return true
+		return card.rank == FaceCards.Rank.KING
 
 	var last_card = cards[cards.size() - 1]
 	var is_prior_rank = card.rank == last_card.rank - 1

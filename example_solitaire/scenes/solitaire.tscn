@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b3nx7g0iu2cd3"]
+[gd_scene load_steps=33 format=3 uid="uid://b3nx7g0iu2cd3"]
 
 [ext_resource type="Script" path="res://example_solitaire/scenes/solitaire.gd" id="1_vfkpr"]
 [ext_resource type="Script" path="res://addons/card_3d/scripts/drag_controller.gd" id="2_evxo0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Shape3D" uid="uid://b4ul43sikpt87" path="res://example_solitaire/column_collision.tres" id="8_bfwbd"]
 [ext_resource type="PackedScene" uid="uid://cviptf2wh1pc0" path="res://example_solitaire/scenes/pile_marker.tscn" id="9_xrvyx"]
 [ext_resource type="Script" path="res://example_solitaire/scripts/deck.gd" id="10_0hsa4"]
+[ext_resource type="Script" path="res://example_solitaire/scenes/solitare_menu.gd" id="12_w3rul"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3x48k"]
 size = Vector3(50, 30, 0.1)
@@ -218,36 +219,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 7, 
 [node name="PileMarker4" parent="." instance=ExtResource("9_xrvyx")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9, 7, -0.5)
 
-[node name="MenuPopup" type="PopupPanel" parent="."]
-size = Vector2i(112, 109)
-visible = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuPopup"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 108.0
-offset_bottom = 105.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ResumeButton" type="Button" parent="MenuPopup/VBoxContainer"]
-layout_mode = 2
-text = "Resume"
-
-[node name="RestartButton" type="Button" parent="MenuPopup/VBoxContainer"]
-layout_mode = 2
-text = "Restart"
-
-[node name="ExitToLobbyButton" type="Button" parent="MenuPopup/VBoxContainer"]
-layout_mode = 2
-text = "Exit to lobby"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("12_w3rul")
 
 [node name="MenuButton" type="Button" parent="CanvasLayer"]
 offset_left = 1094.0
@@ -256,6 +229,35 @@ offset_right = 1147.0
 offset_bottom = 42.0
 text = "Menu"
 
+[node name="MenuBox" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 457.0
+offset_top = -277.0
+offset_right = 570.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/MenuBox"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/MenuBox"]
+layout_mode = 2
+text = "Restart"
+
+[node name="ExitToLobbyButton" type="Button" parent="CanvasLayer/MenuBox"]
+layout_mode = 2
+text = "Exit to lobby"
+
 [connection signal="card_moved" from="DragController" to="." method="_on_drag_controller_card_moved"]
 [connection signal="card_selected" from="Deck" to="." method="_on_deck_card_selected"]
 [connection signal="on_click" from="EmptyDeck" to="." method="_on_empty_deck_on_click"]
+[connection signal="button_down" from="CanvasLayer/MenuButton" to="CanvasLayer" method="_on_menu_button_button_down"]
+[connection signal="pressed" from="CanvasLayer/MenuBox/ResumeButton" to="CanvasLayer" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBox/RestartButton" to="CanvasLayer" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBox/ExitToLobbyButton" to="CanvasLayer" method="_on_exit_to_lobby_button_pressed"]
