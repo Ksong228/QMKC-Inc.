@@ -1,17 +1,17 @@
 extends Node3D
 
-var card_database = FaceCards.new()
+var card_database = UnoCards.new()
 var suits = [
-	FaceCards.Suit.CLUB,
-	FaceCards.Suit.SPADE,
-	FaceCards.Suit.DIAMOND,
-	FaceCards.Suit.HEART,
+	UnoCards.Suit.GREEN,
+	UnoCards.Suit.RED,
+	UnoCards.Suit.YELLOW,
+	UnoCards.Suit.BLUE,
 ]
-var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+var ranks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 var suit_index = 0
 var rank_index = 0
-
+var playerturn = 1
 
 @onready var hand: CardCollection3D = $DragController/Hand
 @onready var pile: CardCollection3D = $DragController/TableCards
@@ -33,22 +33,21 @@ func _input(event):
 		clear_cards()
 
 
-func instantiate_face_card(rank, suit) -> FaceCard3D:
+func instantiate_uno_card(rank, suit) -> UnoCard3D:
 	var scene = load("res://example/face_card_3d.tscn")
-	var face_card_3d: FaceCard3D = scene.instantiate()
+	var uno_card_3d: UnoCard3D = scene.instantiate()
 	var card_data: Dictionary = card_database.get_card_data(rank, suit)
-	face_card_3d.rank = card_data["rank"]
-	face_card_3d.suit = card_data["suit"]
-	face_card_3d.front_material_path = card_data["front_material_path"]
-	face_card_3d.back_material_path = card_data["back_material_path"]
+	uno_card_3d.rank = card_data["rank"]
+	uno_card_3d.suit = card_data["suit"]
+	uno_card_3d.front_material_path = card_data["front_material_path"]
+	uno_card_3d.back_material_path = card_data["back_material_path"]
 	
-	return face_card_3d
+	return uno_card_3d
 
 
 func add_card():
-	var playerturn = 1
 	var data = next_card()
-	var card = instantiate_face_card(data["rank"], data["suit"])
+	var card = instantiate_uno_card(data["rank"], data["suit"])
 	
 	match playerturn:
 		1:
@@ -114,5 +113,5 @@ func clear_cards():
 		c.queue_free()
 
 
-func _on_face_card_3d_card_3d_mouse_up():
+func _on_uno_card_3d_card_3d_mouse_up():
 	add_card()

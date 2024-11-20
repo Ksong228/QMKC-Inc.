@@ -25,7 +25,7 @@ enum Suit {
 }
 
 
-var data: Dictionary = _generate_all_face_cards()
+var data: Dictionary = _generate_all_uno_cards()
 
 func get_card_data(rank: Rank, suit: Suit):
 	var card_id = get_card_id(rank, suit)
@@ -39,13 +39,13 @@ func get_card_id(rank: Rank, suit: Suit) -> String:
 	return str(rank) + " of " + str(suit)
 
 
-func _generate_all_face_cards() -> Dictionary:
+func _generate_all_uno_cards() -> Dictionary:
 	var _data = {}
 	
 	for suit in Suit:
 		for rank in Rank:
 			var front_material = "res://example/materials/" + str(suit).to_lower() + "-" + str(Rank[rank]) + ".tres"
-			var back_material = "res://example/materials/Card_Back.tres"
+			var back_material = "res://example/materials/card-back.tres"
 			var card_data = {
 			"rank": rank,
 			"suit": suit,
