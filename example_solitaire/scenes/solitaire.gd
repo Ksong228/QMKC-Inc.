@@ -10,8 +10,6 @@ extends Node3D
 
 var card_database = FaceCards.new()
 
-@onready var menu_popup: Popup = $MenuPopup 				#for attempted menu button 
-@onready var menu_button: Button = $CanvasLayer/MenuButton	#for attempted menu button
 @onready var deck_collection: CardCollection3D = $Deck
 @onready var draw_collection: CardCollection3D = $DragController/Draw
 @onready var column1: CardCollection3D = $DragController/Column1
@@ -21,7 +19,6 @@ var card_database = FaceCards.new()
 @onready var column5: CardCollection3D = $DragController/Column5
 @onready var column6: CardCollection3D = $DragController/Column6
 @onready var column7: CardCollection3D = $DragController/Column7
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -120,19 +117,3 @@ func check_for_win():
 	if win:
 		get_tree().change_scene_to_file("res://scenes/SolitareWinScreen.tscn")
 		
-#Attempted menu button functions:
-func _on_menu_button_pressed():
-	# Show the pop-up when the menu button is pressed
-	menu_popup.popup_centered()
-
-func _on_exit_to_lobby_pressed():
-	# Exit to the lobby (assumes the lobby scene is called "lobby.tscn")
-	get_tree().change_scene("res://scenes/lobby menu.tscn")
-
-func _on_restart_pressed():
-	# Restart the game by reloading the current scene
-	get_tree().reload_current_scene()
-
-func _on_resume_pressed():
-	# Close the menu popup to resume the game
-	menu_popup.hide()
