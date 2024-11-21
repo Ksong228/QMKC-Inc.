@@ -1,13 +1,15 @@
 extends Node3D
 
-var card_database = FaceCards.new()
+var card_database = UnoCards.new()
+
 var suits = [
-	FaceCards.Suit.SPADE,
-	FaceCards.Suit.DIAMOND,
-	FaceCards.Suit.CLUB,
-	FaceCards.Suit.HEART
+	UnoCards.Suit.RED,
+	UnoCards.Suit.BLUE,
+	UnoCards.Suit.GREEN,
+	UnoCards.Suit.YELLOW
 ]
-var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+var ranks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 var suit_index = 0
 var rank_index = 0

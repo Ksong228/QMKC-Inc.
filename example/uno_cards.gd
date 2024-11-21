@@ -32,7 +32,7 @@ func get_card_data(rank: Rank, suit: Suit):
 	
 	if data.has(card_id):
 		return data[card_id]
-	
+		
 	return null
 	
 func get_card_id(rank: Rank, suit: Suit) -> String:
