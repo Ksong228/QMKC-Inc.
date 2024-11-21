@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://usdfp6fqxnev"]
+[gd_scene load_steps=16 format=3 uid="uid://usdfp6fqxnev"]
 
 [ext_resource type="Script" path="res://example/mizunotable.gd" id="1_dl1vx"]
 [ext_resource type="Script" path="res://addons/card_3d/scripts/drag_controller.gd" id="2_vd44s"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dwcaww0bky4lv" path="res://assets/MIZUNO.glb" id="6_jj2ui"]
 [ext_resource type="PackedScene" uid="uid://bjx4ugu14qx3w" path="res://example/face_card_3d.tscn" id="7_50euc"]
 [ext_resource type="Material" uid="uid://drikh8gb0pvmj" path="res://example/materials/card-back.tres" id="8_cxk50"]
+[ext_resource type="Script" path="res://example/uno_card_3d.gd" id="8_yxpkk"]
+[ext_resource type="ArrayMesh" uid="uid://bxf6kiperudcx" path="res://assets/Cards/card_blue_0.res" id="10_t8hde"]
 
 [sub_resource type="Resource" id="Resource_yq80r"]
 script = ExtResource("4_m0e7m")
@@ -22,6 +24,7 @@ size = Vector2(40, 20)
 albedo_color = Color(0.207843, 0.396078, 0.301961, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g1lkx"]
+material = ExtResource("8_cxk50")
 size = Vector3(2.5, 3.5, 0.2)
 
 [node name="Node3D" type="Node3D"]
@@ -44,11 +47,11 @@ script = ExtResource("1_dl1vx")
 script = ExtResource("2_vd44s")
 
 [node name="TableCards" parent="Table/DragController" instance=ExtResource("3_38q4v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182991, -1.3779, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29413, 0.486655, 0)
 card_layout_strategy = SubResource("Resource_yq80r")
 
 [node name="Hand" parent="Table/DragController" instance=ExtResource("3_38q4v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21758, 2.30532, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21758, 24.1605, 0.5)
 card_layout_strategy = SubResource("Resource_w17iw")
 
 [node name="Player1" parent="Table/DragController" instance=ExtResource("3_38q4v")]
@@ -77,14 +80,21 @@ surface_material_override/0 = SubResource("StandardMaterial3D_glsqp")
 transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0.154611, 0.296223, -18.4303)
 
 [node name="Deck" parent="." instance=ExtResource("7_50euc")]
-transform = Transform3D(1, 8.74228e-08, -8.74228e-08, 8.74228e-08, -1, -7.64274e-15, -8.74228e-08, 0, -1, 1.66348, 2.56126, -0.686903)
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, 8.74228e-08, -1, -7.64274e-15, -8.74228e-08, 0, -1, 2.20189, 0.563266, -0.686903)
+script = ExtResource("8_yxpkk")
 rank = 14
 suit = 3
-back_material_path = "res://example/card-back.tres"
+front_material_path = "res://example/Card_Back.tres"
+back_material_path = "res://example/Card_Back.tres"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Deck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.111376)
+visible = false
 mesh = SubResource("BoxMesh_g1lkx")
 surface_material_override/0 = ExtResource("8_cxk50")
+
+[node name="CardBlue0" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.1, 4.98286e-07, -2.17808e-14, 0, -1.44248e-07, -3.3, -6.19083e-07, -3.3, 1.44248e-07, 2.13136, -3.51193, -0.362734)
+mesh = ExtResource("10_t8hde")
 
 [connection signal="card_3d_mouse_up" from="Deck" to="Table" method="_on_face_card_3d_card_3d_mouse_up"]
