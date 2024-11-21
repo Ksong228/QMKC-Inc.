@@ -46,7 +46,6 @@ func instantiate_uno_card(rank, suit) -> UnoCard3D:
 	
 	return uno_card_3d
 
-
 func add_card():
 	var data = next_card()
 	var card = instantiate_uno_card(data["rank"], data["suit"])
@@ -64,6 +63,9 @@ func add_card():
 		4:
 			player4.append_card(card)
 			card.global_position = $"../Deck".global_position
+	next_turn()
+
+func next_turn():
 	playerturn += 1
 	if playerturn > 4:
 		playerturn = 1
@@ -95,6 +97,7 @@ func play_card(card):
 	pile.append_card(c)
 	c.remove_hovered()
 	c.global_position = card_global_position
+	
 
 
 func clear_cards():
