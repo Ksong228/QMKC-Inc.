@@ -35,21 +35,21 @@ func _input(event):
 		clear_cards()
 
 
-func instantiate_face_card(rank, suit) -> FaceCard3D:
-	var scene = load("res://example/face_card_3d.tscn")
-	var face_card_3d: FaceCard3D = scene.instantiate()
+func instantiate_uno_card(rank, suit) -> UnoCard3D:
+	var scene = load("res://example/uno_card_3d.tscn")
+	var uno_card_3d: UnoCard3D = scene.instantiate()
 	var card_data: Dictionary = card_database.get_card_data(rank, suit)
-	face_card_3d.rank = card_data["rank"]
-	face_card_3d.suit = card_data["suit"]
-	face_card_3d.front_material_path = card_data["front_material_path"]
-	face_card_3d.back_material_path = card_data["back_material_path"]
+	uno_card_3d.rank = card_data["rank"]
+	uno_card_3d.suit = card_data["suit"]
+	uno_card_3d.front_material_path = card_data["front_material_path"]
+	uno_card_3d.back_material_path = card_data["back_material_path"]
 	
-	return face_card_3d
+	return uno_card_3d
 
 
 func add_card():
 	var data = next_card()
-	var card = instantiate_face_card(data["rank"], data["suit"])
+	var card = instantiate_uno_card(data["rank"], data["suit"])
 	
 	match playerturn:
 		1:

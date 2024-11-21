@@ -2,6 +2,7 @@ class_name SuitDiscard
 extends CardCollection3D
 
 func can_insert_card(card: FaceCard3D, from_collection: CardCollection3D) -> bool:
+	print("gethere")
 	if from_collection.card_indicies.has(card) and from_collection.card_indicies[card] < from_collection.cards.size() - 1:
 		return false
 
