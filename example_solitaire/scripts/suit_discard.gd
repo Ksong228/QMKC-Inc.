@@ -2,7 +2,7 @@ class_name SuitDiscard
 extends CardCollection3D
 
 func can_insert_card(card: FaceCard3D, from_collection: CardCollection3D) -> bool:
-	print("gethere")
+	print("card: ", card)
 	if from_collection.card_indicies.has(card) and from_collection.card_indicies[card] < from_collection.cards.size() - 1:
 		return false
 
@@ -12,6 +12,8 @@ func can_insert_card(card: FaceCard3D, from_collection: CardCollection3D) -> boo
 	var last_card = cards[cards.size() - 1]
 	var is_next_rank = (card.rank == last_card.rank + 1) or (last_card.rank == FaceCards.Rank.ACE and card.rank == FaceCards.Rank.TWO)
 	var is_same_suit = last_card.suit == card.suit
+	
+	
 	
 	return is_next_rank and is_same_suit
 

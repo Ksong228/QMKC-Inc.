@@ -3,6 +3,7 @@ extends Card3D
 
 @export var data: Dictionary:
 	set(data):
+		#print(data)
 		if data.has("rank"):
 			rank = UnoCards.Rank[data["rank"]]
 		
@@ -14,7 +15,7 @@ extends Card3D
 			
 		if data.has("back_material_path"):
 			back_material_path = data["back_material_path"]
-
+		
 @export var rank: UnoCards.Rank = UnoCards.Rank.ZERO
 @export var suit: UnoCards.Suit = UnoCards.Suit.GREEN
 @export var front_material_path: String:

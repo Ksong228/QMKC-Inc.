@@ -3,9 +3,10 @@ extends CardCollection3D
 
 func can_insert_card(card: UnoCard3D, from_collection: CardCollection3D) -> bool:
 	#if card has the same suit and/or same value as the card on the top of the deck, return true.
-		print("\n________\n")
+		print("\n________")
 		print("cardssize = ", cards.size())
 		print("Dragging Card: ", card)
+		
 		if cards.size() == 0:
 			return true
 		
@@ -15,7 +16,7 @@ func can_insert_card(card: UnoCard3D, from_collection: CardCollection3D) -> bool
 		
 		print("lastCard: ", last_card)
 		
-		return is_same_color and is_same_rank
+		return is_same_color or is_same_rank
 		
 func can_reorder_card(_card: UnoCard3D) -> bool:
 	return false

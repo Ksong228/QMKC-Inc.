@@ -11,8 +11,8 @@ var suits = [
 
 var ranks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-var suit_index = 0
-var rank_index = 0
+#var suit_index = 0
+#var rank_index = 0
 var playerturn = 1
 
 @onready var hand: CardCollection3D = $DragController/Hand
@@ -21,6 +21,14 @@ var playerturn = 1
 @onready var player2: CardCollection3D = $DragController/Player2
 @onready var player3: CardCollection3D = $DragController/Player3
 @onready var player4: CardCollection3D = $DragController/Player4
+
+#func _ready():
+	
+#	var card_deck: Array[UnoCard3D] = []
+
+#	for suit in UnoCards.Suit:
+#		for rank in UnoCards.Rank:
+#			card_deck.push_back(instantiate_uno_card(UnoCards.Rank[rank], UnoCards.Suit[suit]))
 
 func _input(event):
 	if event.is_action_pressed("ui_down"):
@@ -39,11 +47,11 @@ func instantiate_uno_card(rank, suit) -> UnoCard3D:
 	var scene = load("res://example/uno_card_3d.tscn")
 	var uno_card_3d: UnoCard3D = scene.instantiate()
 	var card_data: Dictionary = card_database.get_card_data(rank, suit)
-	uno_card_3d.rank = card_data["rank"]
-	uno_card_3d.suit = card_data["suit"]
-	uno_card_3d.front_material_path = card_data["front_material_path"]
-	uno_card_3d.back_material_path = card_data["back_material_path"]
-	
+	#uno_card_3d.rank = card_data["rank"]
+	#uno_card_3d.suit = card_data["suit"]
+	#uno_card_3d.front_material_path = card_data["front_material_path"]
+	#uno_card_3d.back_material_path = card_data["back_material_path"]
+	uno_card_3d.data = card_data
 	return uno_card_3d
 
 func add_card():
@@ -75,6 +83,9 @@ func next_card():
 	var rank_index = randi() % ranks.size()
 	var suit = suits[suit_index]
 	var rank = ranks[rank_index]
+	
+	#print("suit: ", suit)
+	#print("rank: ", rank)
 	
 	return {"suit": suit, "rank": rank}
 

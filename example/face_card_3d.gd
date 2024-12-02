@@ -3,6 +3,7 @@ extends Card3D
 
 @export var data: Dictionary:
 	set(data):
+		
 		if data.has("rank"):
 			rank = FaceCards.Rank[data["rank"]]
 		
@@ -32,7 +33,6 @@ extends Card3D
 			
 			if material:
 				$CardMesh/CardBackMesh.set_surface_override_material(0, material)
-
 
 func _to_string():
 	return str(rank) + " of " + str(suit)

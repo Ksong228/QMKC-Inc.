@@ -53,6 +53,8 @@ func _generate_all_face_cards() -> Dictionary:
 			"back_material_path": back_material
 			}
 			var card_id = get_card_id(Rank[rank], Suit[suit])
+			
 			_data[card_id] = card_data
+			
 			
 	return _data
