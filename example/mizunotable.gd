@@ -95,7 +95,6 @@ func next_turn():
 	if playerturn > 4:
 		playerturn = 1
 
-	print("SSSSSSSSSSSSSSSSSSSSSSSSSSSS")
 	print("It's Player %d's turn." % playerturn)
 	match playerturn:
 		1:
