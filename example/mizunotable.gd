@@ -11,9 +11,7 @@ var suits = [
 
 var ranks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-#var suit_index = 0
-#var rank_index = 0
-var playerturn = 1
+var playerturn = 0
 
 @onready var hand: CardCollection3D = $DragController/Hand
 @onready var pile: CardCollection3D = $DragController/TableCards
@@ -22,13 +20,33 @@ var playerturn = 1
 @onready var player3: CardCollection3D = $DragController/Player3
 @onready var player4: CardCollection3D = $DragController/Player4
 
-#func _ready():
-	
-#	var card_deck: Array[UnoCard3D] = []
+func _ready():
+	start_game()
+	deal_cards()
 
-#	for suit in UnoCards.Suit:
-#		for rank in UnoCards.Rank:
-#			card_deck.push_back(instantiate_uno_card(UnoCards.Rank[rank], UnoCards.Suit[suit]))
+func start_game():
+	playerturn = 0
+	next_turn()
+	
+func deal_cards():
+	for i in range(7):
+		for player in [player1, player2, player3, player4]:
+			var data = next_card()
+			var card = instantiate_uno_card(data["rank"], data["suit"])
+			player.append_card(card)
+			card.global_position = $"../Deck".global_position
+
+func is_current_player(player: CardCollection3D) -> bool:
+	match playerturn:
+		1:
+			return player == player1
+		2:
+			return player == player2
+		3:
+			return player == player3
+		4:
+			return player == player4
+	return false
 
 func _input(event):
 	if event.is_action_pressed("ui_down"):
@@ -42,19 +60,18 @@ func _input(event):
 	elif event.is_action_pressed("ui_left"):
 		clear_cards()
 
-
 func instantiate_uno_card(rank, suit) -> UnoCard3D:
 	var scene = load("res://example/uno_card_3d.tscn")
 	var uno_card_3d: UnoCard3D = scene.instantiate()
 	var card_data: Dictionary = card_database.get_card_data(rank, suit)
-	#uno_card_3d.rank = card_data["rank"]
-	#uno_card_3d.suit = card_data["suit"]
-	#uno_card_3d.front_material_path = card_data["front_material_path"]
-	#uno_card_3d.back_material_path = card_data["back_material_path"]
 	uno_card_3d.data = card_data
 	return uno_card_3d
 
 func add_card():
+	if !is_current_player(player1) and !is_current_player(player2) and !is_current_player(player3) and !is_current_player(player4):
+		print("It's not this player's turn.")
+		return
+
 	var data = next_card()
 	var card = instantiate_uno_card(data["rank"], data["suit"])
 	
@@ -71,12 +88,24 @@ func add_card():
 		4:
 			player4.append_card(card)
 			card.global_position = $"../Deck".global_position
-	next_turn()
 
 func next_turn():
+	# Switch to the next player's turn.
 	playerturn += 1
 	if playerturn > 4:
 		playerturn = 1
+
+	print("SSSSSSSSSSSSSSSSSSSSSSSSSSSS")
+	print("It's Player %d's turn." % playerturn)
+	match playerturn:
+		1:
+			pile.current_player = player1
+		2:
+			pile.current_player = player2
+		3:
+			pile.current_player = player3
+		4:
+			pile.current_player = player4
 
 func next_card():
 	var suit_index = randi() % suits.size()
@@ -84,11 +113,7 @@ func next_card():
 	var suit = suits[suit_index]
 	var rank = ranks[rank_index]
 	
-	#print("suit: ", suit)
-	#print("rank: ", rank)
-	
 	return {"suit": suit, "rank": rank}
-
 
 func remove_card():
 	if hand.cards.size() == 0:
@@ -99,17 +124,33 @@ func remove_card():
 	
 	play_card(card_to_remove)
 
-
 func play_card(card):
-	var card_index = hand.card_indicies[card]
-	var card_global_position = hand.cards[card_index].global_position
-	var c = hand.remove_card(card_index)
+	# Ensure only the current player can play cards.
+	var current_player
+	match playerturn:
+		1:
+			current_player = player1
+		2:
+			current_player = player2
+		3:
+			current_player = player3
+		4:
+			current_player = player4
+
+	if card not in current_player.cards:
+		print("You cannot play this card. It's Player %d's turn." % playerturn)
+		return
+
+	var card_index = current_player.card_indicies[card]
+	var card_global_position = current_player.cards[card_index].global_position
+	var c = current_player.remove_card(card_index)
 	
 	pile.append_card(c)
 	c.remove_hovered()
 	c.global_position = card_global_position
-	
 
+	# Advance to the next turn after a card is played.
+	next_turn()
 
 func clear_cards():
 	var hand_cards = hand.remove_all()
@@ -121,6 +162,9 @@ func clear_cards():
 	for c in pile_cards:
 		c.queue_free()
 
-
 func _on_face_card_3d_card_3d_mouse_up():
 	add_card()
+
+
+func _on_table_cards_card_added(card: Variant) -> void:
+	next_turn()

@@ -95,4 +95,5 @@ surface_material_override/0 = ExtResource("8_cxk50")
 transform = Transform3D(-4.1, 4.98286e-07, -2.17808e-14, 0, -1.44248e-07, -3.3, -6.19083e-07, -3.3, 1.44248e-07, 2.13136, -3.51193, -0.362734)
 mesh = ExtResource("10_t8hde")
 
+[connection signal="card_added" from="Table/DragController/TableCards" to="Table" method="_on_table_cards_card_added"]
 [connection signal="card_3d_mouse_up" from="Deck" to="Table" method="_on_face_card_3d_card_3d_mouse_up"]

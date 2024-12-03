@@ -1,11 +1,16 @@
 class_name TableDiscard
 extends CardCollection3D
 
+var current_player: CardCollection3D
+
 func can_insert_card(card: UnoCard3D, from_collection: CardCollection3D) -> bool:
-	#if card has the same suit and/or same value as the card on the top of the deck, return true.
 		print("\n________")
 		print("cardssize = ", cards.size())
 		print("Dragging Card: ", card)
+		
+		if from_collection != current_player:
+			print("It's not this player's turn.")
+			return false
 		
 		if cards.size() == 0:
 			return true
