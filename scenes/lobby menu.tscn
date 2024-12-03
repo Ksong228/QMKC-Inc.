@@ -158,7 +158,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
 text = "SOLITARE"
 script = ExtResource("1_nv4mh")
 
-[node name="Game 3" type="Button" parent="."]
+[node name="Sandbox" type="Button" parent="."]
 layout_mode = 2
 offset_left = 789.0
 offset_top = 347.0
@@ -182,6 +182,8 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_2ygai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jvi4i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b1qh")
+text = "SANDBOX"
+script = ExtResource("1_nv4mh")
 
 [node name="Game 4" type="Button" parent="."]
 layout_mode = 0
@@ -316,22 +318,23 @@ text = "JOIN"
 position = Vector2(1348, 615)
 zoom = Vector2(0.375, 0.375)
 
-[connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Mizuno" to="." method="_on_mizuno_pressed"]
 [connection signal="pressed" from="Mizuno" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Mizuno" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Solitare" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Solitare" to="." method="_on_solitare_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_mizuno_pressed"]
+[connection signal="pressed" from="Mizuno" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Solitare" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Solitare" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Game 3" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Game 3" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Game 3" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Solitare" to="." method="_on_solitare_pressed"]
+[connection signal="pressed" from="Solitare" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Sandbox" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Sandbox" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Sandbox" to="." method="_on_sandbox_pressed"]
+[connection signal="pressed" from="Sandbox" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Game 4" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Game 4" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Game 4" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_exit_pressed"]
 [connection signal="text_changed" from="Network/VBoxContainer/User" to="Network" method="_on_user_text_changed"]
 [connection signal="pressed" from="Network/VBoxContainer/Host" to="Network" method="start_host"]
 [connection signal="pressed" from="Network/VBoxContainer/Join" to="Network" method="join_game"]

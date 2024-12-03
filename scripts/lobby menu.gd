@@ -8,3 +8,6 @@ func _on_mizuno_pressed() -> void:
 	
 func _on_solitare_pressed() -> void:
 	get_tree().change_scene_to_file("res://example_solitaire/scenes/solitaire.tscn")
+
+func _on_sandbox_pressed() -> void:
+	get_tree().change_scene_to_file("res://example/sandbox.tscn")

@@ -9,6 +9,7 @@ var suits = [
 ]
 var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
+var playerturn = 1
 var suit_index = 0
 var rank_index = 0
 
@@ -48,22 +49,35 @@ func instantiate_face_card(rank, suit) -> FaceCard3D:
 func add_card():
 	var data = next_card()
 	var card = instantiate_face_card(data["rank"], data["suit"])
-	hand.append_card(card)
-	card.global_position = $"../Deck".global_position
+	
+	match playerturn:
+		1:
+			player1.append_card(card)
+			card.global_position = $"../Deck".global_position
+			next_turn()
+		2:
+			player2.append_card(card)
+			card.global_position = $"../Deck".global_position
+			next_turn()
+		3:
+			player3.append_card(card)
+			card.global_position = $"../Deck".global_position
+			next_turn()
+		4:
+			player4.append_card(card)
+			card.global_position = $"../Deck".global_position
+			next_turn()
 
+func next_turn():
+		playerturn += 1
+		if playerturn > 4:
+			playerturn = 1
 
 func next_card():
+	var suit_index = randi() % suits.size()
+	var rank_index = randi() % ranks.size()
 	var suit = suits[suit_index]
 	var rank = ranks[rank_index]
-	
-	rank_index += 1
-	
-	if rank_index == ranks.size():
-		rank_index = 0
-		suit_index += 1
-	
-	if suit_index == suits.size():
-		suit_index = 0
 	
 	return {"suit": suit, "rank": rank}
 

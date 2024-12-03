@@ -135,6 +135,7 @@ offset_bottom = 184.0
 text = "Play Again"
 
 [node name="ExitToLobbyButton" type="Button" parent="WinCanvas/Panel"]
+layout_mode = 0
 offset_left = 136.0
 offset_top = 200.0
 offset_right = 376.0
