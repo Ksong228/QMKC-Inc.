@@ -138,6 +138,5 @@ func handle_card(card: UnoCard3D):
 func _on_face_card_3d_card_3d_mouse_up():
 	add_card()
 
-
 func _on_table_cards_card_added(card: Variant) -> void:
 	handle_card(card)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://usdfp6fqxnev"]
+[gd_scene load_steps=16 format=3 uid="uid://usdfp6fqxnev"]
 
 [ext_resource type="Script" path="res://example/mizunotable.gd" id="1_dl1vx"]
 [ext_resource type="Script" path="res://addons/card_3d/scripts/drag_controller.gd" id="2_vd44s"]
@@ -10,6 +10,7 @@
 [ext_resource type="Material" uid="uid://drikh8gb0pvmj" path="res://example/materials/card-back.tres" id="8_cxk50"]
 [ext_resource type="Script" path="res://example/uno_card_3d.gd" id="8_yxpkk"]
 [ext_resource type="ArrayMesh" uid="uid://bxf6kiperudcx" path="res://assets/Cards/card_blue_0.res" id="10_t8hde"]
+[ext_resource type="Script" path="res://example/MizunoMenu.gd" id="11_dmlbv"]
 
 [sub_resource type="Resource" id="Resource_w17iw"]
 script = ExtResource("5_gc5vc")
@@ -94,6 +95,16 @@ surface_material_override/0 = ExtResource("8_cxk50")
 [node name="CardBlue0" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.1, 4.98286e-07, -2.17808e-14, 0, -1.44248e-07, -3.3, -6.19083e-07, -3.3, 1.44248e-07, 2.13136, -3.51193, -0.362734)
 mesh = ExtResource("10_t8hde")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("11_dmlbv")
+
+[node name="MenuButton" type="MenuButton" parent="CanvasLayer"]
+offset_left = 1090.0
+offset_top = 6.0
+offset_right = 1147.0
+offset_bottom = 37.0
+text = "Menu"
 
 [connection signal="card_added" from="Table/DragController/TableCards" to="Table" method="_on_table_cards_card_added"]
 [connection signal="card_3d_mouse_up" from="Deck" to="Table" method="_on_face_card_3d_card_3d_mouse_up"]
