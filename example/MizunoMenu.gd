@@ -6,7 +6,6 @@ func _ready() -> void:
 	$MenuButton.get_popup().add_item("Resume")
 	$MenuButton.get_popup().add_item("Restart")
 	$MenuButton.get_popup().add_item("Exit to Lobby")
-	
 	$MenuButton.get_popup().connect("id_pressed", _on_item_pressed)
 
 func _on_item_pressed(id):

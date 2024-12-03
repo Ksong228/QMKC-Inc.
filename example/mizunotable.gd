@@ -89,7 +89,7 @@ func next_turn():
 		if playerturn < 1:
 			playerturn = 4
 
-	print("It's Player %d's turn." % playerturn)
+	#print("It's Player %d's turn." % playerturn)
 	match playerturn:
 		1:
 			pile.current_player = player1
@@ -135,8 +135,31 @@ func handle_card(card: UnoCard3D):
 	else:
 		print("unknown card")
 
+func get_current_player() -> CardCollection3D:
+	
+	match playerturn:
+		1:
+			return player1
+		2:
+			return player2
+		3:
+			return player3
+		4:
+			return player4
+	return player1
+
+func check_for_win(currplayer):
+	
+	if currplayer.cards.size() < 1:
+		#disable all card movement
+		
+		var wincanvas = get_node("../WinCanvas")
+		wincanvas.show_win_screen(str(playerturn))
+	
+
 func _on_face_card_3d_card_3d_mouse_up():
 	add_card()
 
 func _on_table_cards_card_added(card: Variant) -> void:
+	check_for_win(get_current_player())
 	handle_card(card)
