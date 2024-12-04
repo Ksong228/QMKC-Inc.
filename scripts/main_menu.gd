@@ -26,3 +26,7 @@ func hide_join_panel():
 
 func _on_close_button_button_down() -> void:
 	hide_join_panel()
+	
+func _on_join_button_button_down() -> void:
+	get_tree().change_scene_to_file("res://scenes/multiplayerLobby.tscn")
+	#replace the above line with checking the code decrypting the code into the hosts ip, checking if there is a host with that ip and joining that lobby
