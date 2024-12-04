@@ -1,7 +1,7 @@
 extends Control
 
 func _on_single_player_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/lobby menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/singleplayer.tscn")
 	
 func _on_host_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/lobby menu.tscn")
