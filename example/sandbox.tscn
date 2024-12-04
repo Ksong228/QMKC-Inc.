@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://usdfp6fqxnev"]
+[gd_scene load_steps=16 format=3 uid="uid://usdfp6fqxnev"]
 
 [ext_resource type="Script" path="res://example/sandbox.gd" id="1_trlmi"]
 [ext_resource type="Script" path="res://addons/card_3d/scripts/drag_controller.gd" id="2_07uyt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/card_3d/scripts/card_layouts/fan_card_layout.gd" id="5_rd2gk"]
 [ext_resource type="PackedScene" uid="uid://bjx4ugu14qx3w" path="res://example/face_card_3d.tscn" id="6_qtugc"]
 [ext_resource type="ArrayMesh" uid="uid://bxf6kiperudcx" path="res://assets/Cards/card_blue_0.res" id="7_8811t"]
+[ext_resource type="Script" path="res://example/MizunoMenu.gd" id="9_w4vi5"]
 
 [sub_resource type="Resource" id="Resource_yq80r"]
 script = ExtResource("4_t7f8m")
@@ -91,5 +92,16 @@ suit = 3
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Deck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.111376)
 mesh = SubResource("BoxMesh_g1lkx")
+
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+script = ExtResource("9_w4vi5")
+
+[node name="MenuButton" type="MenuButton" parent="MenuCanvas"]
+offset_left = 1090.0
+offset_top = 6.0
+offset_right = 1147.0
+offset_bottom = 37.0
+text = "Menu"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="card_3d_mouse_up" from="Deck" to="Table" method="_on_face_card_3d_card_3d_mouse_up"]

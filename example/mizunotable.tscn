@@ -106,6 +106,7 @@ offset_top = 6.0
 offset_right = 1147.0
 offset_bottom = 37.0
 text = "Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="WinCanvas" type="CanvasLayer" parent="."]
 script = ExtResource("12_21e7f")
@@ -115,6 +116,7 @@ offset_left = 320.0
 offset_top = 128.0
 offset_right = 832.0
 offset_bottom = 440.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="WinCanvas/Panel"]
 layout_mode = 0
@@ -125,6 +127,7 @@ offset_bottom = 91.0
 text = "Player __ wins"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayAgainButton" type="Button" parent="WinCanvas/Panel"]
 layout_mode = 0
@@ -133,6 +136,7 @@ offset_top = 136.0
 offset_right = 376.0
 offset_bottom = 184.0
 text = "Play Again"
+metadata/_edit_use_anchors_ = true
 
 [node name="ExitToLobbyButton" type="Button" parent="WinCanvas/Panel"]
 layout_mode = 0
@@ -141,6 +145,7 @@ offset_top = 200.0
 offset_right = 376.0
 offset_bottom = 248.0
 text = "Exit to Lobby"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="card_added" from="Table/DragController/TableCards" to="Table" method="_on_table_cards_card_added"]
 [connection signal="card_3d_mouse_up" from="Deck" to="Table" method="_on_face_card_3d_card_3d_mouse_up"]
