@@ -31,7 +31,7 @@ size = Vector3(2.5, 3.5, 0.2)
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.49813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.9188)
 shadow_enabled = true
 shadow_opacity = 0.65
 shadow_blur = 5.0
@@ -57,19 +57,19 @@ visible = false
 card_layout_strategy = SubResource("Resource_w17iw")
 
 [node name="Player1" parent="Table/DragController" instance=ExtResource("3_38q4v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0754433, -10.3692, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0754433, -8.63756, 0.5)
 script = ExtResource("6_cgdij")
 
 [node name="Player2" parent="Table/DragController" instance=ExtResource("3_38q4v")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10.1461, 0.556923, 0.5)
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, -10.1461, 0.556923, 0.64165)
 script = ExtResource("7_xp7b2")
 
 [node name="Player3" parent="Table/DragController" instance=ExtResource("3_38q4v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0613, 12.2174, 0.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.0613, 10.5932, 0.662132)
 script = ExtResource("7_xp7b2")
 
 [node name="Player4" parent="Table/DragController" instance=ExtResource("3_38q4v")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 11.2482, 1.07772, 0.5)
+transform = Transform3D(4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 3.82137e-15, 8.74228e-08, -1, 11.2482, 0.718078, 0.677801)
 script = ExtResource("7_xp7b2")
 
 [node name="TableSurface" type="MeshInstance3D" parent="Table"]
@@ -96,7 +96,7 @@ mesh = SubResource("BoxMesh_g1lkx")
 surface_material_override/0 = ExtResource("8_cxk50")
 
 [node name="CardBlue0" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.1, 4.98286e-07, -2.17808e-14, 0, -1.44248e-07, -3.3, -6.19083e-07, -3.3, 1.44248e-07, 2.13136, -3.51193, -0.362734)
+transform = Transform3D(-4.2, 5.13386e-07, -2.17808e-14, 0, -1.48619e-07, -3.3, -6.34182e-07, -3.4, 1.44248e-07, 2.13136, -3.53868, -0.362734)
 mesh = ExtResource("10_t8hde")
 
 [node name="MenuCanvas" type="CanvasLayer" parent="."]
