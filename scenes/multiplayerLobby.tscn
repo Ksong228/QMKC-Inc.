@@ -1,0 +1,190 @@
+[gd_scene load_steps=9 format=3 uid="uid://bv643yqwlps0h"]
+
+[ext_resource type="Script" path="res://scripts/multiplayerlobby.gd" id="1_nlkhe"]
+[ext_resource type="Texture2D" uid="uid://b8uapn7m4qc82" path="res://assets/animal-1296970_1920.png" id="2_7cvro"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwxfi"]
+texture = ExtResource("2_7cvro")
+modulate_color = Color(0.628087, 0.597238, 0.597229, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ej0m"]
+bg_color = Color(0.627157, 0.469996, 0.064229, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acgbq"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dugdg"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d2gc"]
+bg_color = Color(0.627451, 0.470588, 0.0627451, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd7x0"]
+bg_color = Color(0.945098, 0.721569, 0.176471, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_size = 5
+
+[node name="MultiplayerLobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nlkhe")
+
+[node name="Panel (backg)" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -10.197
+anchor_right = 36.364
+offset_left = 11746.9
+offset_right = -40739.3
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jwxfi")
+
+[node name="LobbyCodePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 144.0
+offset_right = 512.0
+offset_bottom = 216.0
+
+[node name="LobbyCode" type="Label" parent="LobbyCodePanel"]
+layout_mode = 0
+offset_right = 392.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 20
+text = "Lobby Code: XXXX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNamesPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 256.0
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Mizuno" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 640.0
+offset_top = 152.0
+offset_right = 1088.0
+offset_bottom = 296.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ej0m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_acgbq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dugdg")
+text = "MIZUNO"
+
+[node name="Sandbox" type="Button" parent="."]
+offset_left = 640.0
+offset_top = 344.0
+offset_right = 1088.0
+offset_bottom = 488.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ej0m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_acgbq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dugdg")
+text = "SANDBOX"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 560.0
+offset_right = 224.0
+offset_bottom = 640.0
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_2d2gc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wd7x0")
+text = "BACK"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -316.0
+offset_right = 320.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945098, 0.721569, 0.176471, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "GAME LOBBY"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="Mizuno" to="." method="_on_mizuno_button_down"]
+[connection signal="button_down" from="Sandbox" to="." method="_on_sandbox_button_down"]
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]

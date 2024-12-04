@@ -74,7 +74,6 @@ offset_bottom = 1033.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_telhf")
-metadata/_edit_use_anchors_ = true
 
 [node name="Lobby code" type="VBoxContainer" parent="."]
 layout_mode = 2
