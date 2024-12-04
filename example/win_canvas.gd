@@ -11,7 +11,6 @@ func _ready() -> void:
 func show_win_screen(winner: String):
 	var wintext = "Player %s Wins!" % winner
 	label.text = wintext
-	
 	panel.visible = true
 
 func hide_win_screen():
