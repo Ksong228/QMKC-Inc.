@@ -15,7 +15,6 @@ Usage:
 class_name CardCollection3D
 extends Node3D
 
-
 signal mouse_enter_drop_zone()
 signal mouse_exit_drop_zone()
 signal card_selected(card)

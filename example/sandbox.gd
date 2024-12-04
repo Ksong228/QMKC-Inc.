@@ -13,7 +13,6 @@ var playerturn = 1
 var suit_index = 0
 var rank_index = 0
 
-
 @onready var hand: CardCollection3D = $DragController/Hand
 @onready var pile: CardCollection3D = $DragController/TableCards
 @onready var player1: CardCollection3D = $DragController/Player1

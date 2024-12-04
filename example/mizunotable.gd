@@ -22,6 +22,10 @@ var reverse = false
 
 func _ready():
 	pile.card_layout_strategy = PileCardLayout.new()
+	player1.card_layout_strategy = FanCardLayout.new()
+	player2.card_layout_strategy = FanCardLayout.new()
+	player3.card_layout_strategy = FanCardLayout.new()
+	player4.card_layout_strategy = FanCardLayout.new()
 	start_game()
 	deal_cards()
 
@@ -89,7 +93,7 @@ func next_turn():
 		if playerturn < 1:
 			playerturn = 4
 
-	#print("It's Player %d's turn." % playerturn)
+	print("It's Player %d's turn." % playerturn)
 	match playerturn:
 		1:
 			pile.current_player = player1
@@ -155,7 +159,27 @@ func check_for_win(currplayer):
 		
 		var wincanvas = get_node("../WinCanvas")
 		wincanvas.show_win_screen(str(playerturn))
+
+func check_cpu_player():
+	if playerturn == 1:
+		return false
+	return true
 	
+
+func cpu_play():
+	await get_tree().create_timer(2).timeout
+	var i = 0
+	var player = get_current_player()
+	for card in player.cards:
+		if pile.can_insert_card(card, player):
+			player.remove_card(i)
+			pile.append_card(card)
+			return 
+		i += 1
+	add_card()
+	cpu_play()
+
+
 
 func _on_face_card_3d_card_3d_mouse_up():
 	add_card()
@@ -163,3 +187,7 @@ func _on_face_card_3d_card_3d_mouse_up():
 func _on_table_cards_card_added(card: Variant) -> void:
 	check_for_win(get_current_player())
 	handle_card(card)
+	if check_cpu_player():
+		cpu_play()
+			
+		
