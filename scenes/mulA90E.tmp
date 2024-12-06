@@ -47,7 +47,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 shadow_size = 5
 
-[node name="MultiplayerLobby" type="Control" node_paths=PackedStringArray("player_name_edit", "status_label")]
+[node name="MultiplayerLobby" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,21 +55,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlkhe")
-player_name_edit = NodePath("Network/Hosting Panel/VBoxContainer/Player Name")
-status_label = NodePath("Network/Hosting Panel/Lobby Code")
 
 [node name="Panel (backg)" type="Panel" parent="."]
 layout_mode = 1
-offset_right = 1152.0
+anchors_preset = -1
+anchor_left = -10.197
+anchor_right = 36.364
+offset_left = 11746.9
+offset_right = -40739.3
 offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jwxfi")
 
 [node name="Mizuno" type="Button" parent="."]
 layout_mode = 1
+anchors_preset = -1
 offset_left = 640.0
-offset_top = 167.0
+offset_top = 152.0
 offset_right = 1088.0
-offset_bottom = 311.0
+offset_bottom = 296.0
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -91,11 +96,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dugdg")
 text = "MIZUNO"
 
 [node name="Sandbox" type="Button" parent="."]
-layout_mode = 1
+layout_mode = 0
 offset_left = 640.0
-offset_top = 356.0
+offset_top = 344.0
 offset_right = 1088.0
-offset_bottom = 500.0
+offset_bottom = 488.0
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -117,11 +122,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dugdg")
 text = "SANDBOX"
 
 [node name="Back" type="Button" parent="."]
-layout_mode = 1
+layout_mode = 0
 offset_left = 32.0
-offset_top = 554.0
+offset_top = 560.0
 offset_right = 224.0
-offset_bottom = 634.0
+offset_bottom = 640.0
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -143,10 +148,17 @@ text = "BACK"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-offset_left = 266.0
-offset_top = 14.0
-offset_right = 906.0
-offset_bottom = 134.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -316.0
+offset_right = 320.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.945098, 0.721569, 0.176471, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
@@ -189,11 +201,12 @@ text = "HOST"
 
 [node name="Lobby Code" type="Label" parent="Network/Hosting Panel"]
 layout_mode = 0
-offset_left = 10.0
+offset_left = 58.0
 offset_top = -86.0
-offset_right = 550.0
+offset_right = 491.0
 offset_bottom = -17.0
 theme_override_font_sizes/font_size = 40
+text = "Lobby Code: XXXX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -203,4 +216,3 @@ position = Vector2(577, 326)
 [connection signal="button_down" from="Mizuno" to="." method="_on_mizuno_button_down"]
 [connection signal="button_down" from="Sandbox" to="." method="_on_sandbox_button_down"]
 [connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
-[connection signal="pressed" from="Network/Hosting Panel/VBoxContainer/Host" to="." method="_on_host_button_pressed"]

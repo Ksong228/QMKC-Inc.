@@ -51,7 +51,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" node_paths=PackedStringArray("joinPanel", "room_code_input", "join_status_label")]
 layout_mode = 3
 anchor_left = 1.332
 anchor_top = 1.337
@@ -66,6 +66,9 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_avew1")
+joinPanel = NodePath("JoinPanel")
+room_code_input = NodePath("JoinPanel/Code Input")
+join_status_label = NodePath("JoinPanel/Status")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -94,10 +97,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 225
 text = "CARD GAME HUB"
 horizontal_alignment = 1
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1534, 867)
-zoom = Vector2(0.375, 0.375)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -200,35 +199,85 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_udfyd")
 text = "EXIT"
 
 [node name="JoinPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.350309
+anchor_right = 0.0164931
+anchor_bottom = 0.0694444
 offset_left = 320.0
 offset_top = 672.0
 offset_right = 1408.0
 offset_bottom = 1256.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="JoinPanel"]
+[node name="Join Lobby" type="Label" parent="JoinPanel"]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 32.0
 offset_right = 968.0
 offset_bottom = 160.0
 theme_override_font_sizes/font_size = 77
-text = "Enter Join Code:"
+text = "Enter Lobby Code:"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Textbox" type="TextEdit" parent="JoinPanel"]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 224.0
-offset_right = 768.0
-offset_bottom = 328.0
-theme_override_font_sizes/font_size = 40
-placeholder_text = "Enter code here..."
-metadata/_edit_use_anchors_ = true
+[node name="Player Name" type="LineEdit" parent="JoinPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.504
+offset_top = -260.0
+offset_right = 505.496
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+placeholder_text = "ENTER NAME..."
+alignment = 1
+
+[node name="Code Input" type="LineEdit" parent="JoinPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -491.0
+offset_top = -86.0
+offset_right = 505.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+placeholder_text = "ENTER CODE..."
+alignment = 1
+
+[node name="Status" type="Label" parent="JoinPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.504
+offset_top = 85.0
+offset_right = 505.496
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 95
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CloseButton" type="Button" parent="JoinPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.346963
+anchor_bottom = 0.346963
 offset_left = 128.0
 offset_top = 384.0
 offset_right = 448.0
@@ -238,14 +287,23 @@ text = "Close"
 metadata/_edit_use_anchors_ = true
 
 [node name="JoinButton" type="Button" parent="JoinPanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0330846
+anchor_top = 0.346963
+anchor_right = 0.0330846
+anchor_bottom = 0.346963
 offset_left = 640.0
 offset_top = 384.0
 offset_right = 960.0
 offset_bottom = 504.0
 theme_override_font_sizes/font_size = 40
-text = "Enter"
+text = "Join"
 metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1534, 867)
+zoom = Vector2(0.375, 0.375)
 
 [connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="VBoxContainer/Host Game" to="." method="_on_host_game_pressed"]
@@ -253,3 +311,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="button_down" from="JoinPanel/CloseButton" to="." method="_on_close_button_button_down"]
 [connection signal="button_down" from="JoinPanel/JoinButton" to="." method="_on_join_button_button_down"]
+[connection signal="pressed" from="JoinPanel/JoinButton" to="." method="_on_join_game_pressed"]
+[connection signal="pressed" from="JoinPanel/JoinButton" to="." method="_on_join_button_pressed"]
